@@ -355,26 +355,24 @@ function getTodayKey(prefix) {
 // ===================================================
 // LAUNCH COUNTDOWN GATE
 // ===================================================
-
-(function launchGate() {
-  const launchDate = new Date("2026-02-07T00:00:00").getTime();
+document.addEventListener("DOMContentLoaded", () => {
+  const launchDate = new Date("2026-02-06T18:30:00Z").getTime();
   const overlay = document.getElementById("launch-overlay");
 
   if (!overlay) return;
+
+  document.body.classList.add("launch-locked");
 
   function updateCountdown() {
     const now = Date.now();
     const diff = launchDate - now;
 
-    // Launch time reached
     if (diff <= 0) {
       document.body.classList.remove("launch-locked");
       overlay.remove();
       clearInterval(timer);
       return;
     }
-
-    document.body.classList.add("launch-locked");
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -389,4 +387,4 @@ function getTodayKey(prefix) {
 
   updateCountdown();
   const timer = setInterval(updateCountdown, 1000);
-})();
+});
