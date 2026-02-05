@@ -461,3 +461,67 @@ p {
   font-style: italic;
   color: var(--soft-text);
 }
+
+/* =========================
+   LAUNCH OVERLAY
+========================= */
+#launch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: linear-gradient(
+    135deg,
+    var(--bg-color),
+    #ffe4ec
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.launch-content h1 {
+  font-size: 3rem;
+  color: var(--heading-color);
+  margin-bottom: 0.6rem;
+}
+
+.launch-sub {
+  color: var(--soft-text);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+#countdown {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+#countdown div {
+  background: var(--card-bg);
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  min-width: 80px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+#countdown span {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  color: var(--heading-color);
+}
+
+#countdown small {
+  color: var(--soft-text);
+  font-size: 0.75rem;
+}
+
+/* Hide site while launch is active */
+body.launch-locked > *:not(#launch-overlay) {
+  display: none !important;
+}
