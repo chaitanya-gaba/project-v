@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Miss You</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Floating hearts automatically placed -->
+<script>
+    for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.textContent = "💗";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDelay = Math.random() * 5 + "s";
+        heart.style.fontSize = (20 + Math.random() * 30) + "px";
+        document.body.appendChild(heart);
+    }
+</script>
+
+<div class="card">
+    <div class="title">I Miss You</div>
+    <p class="message">
+        I miss your smile… your voice… your warmth.  
+        The days feel longer without you.  
+        I wish I could hold you right now.
+    </p>
+
+    <a class="btn" href="#">💞 Sending You Love KitKat</a>
+</div>
+
+</body>
+</html>

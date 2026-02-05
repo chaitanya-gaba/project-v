@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ffe6f0;
+}
+
+/* ================= PANDA ================= */
+.panda {
+    width: 200px;
+    position: relative;
+}
+
+/* Ears */
+.ear {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #000;
+    border-radius: 50%;
+    top: -10px;
+}
+.ear.left { left: -5px; }
+.ear.right { right: -5px; }
+
+/* Face */
+.face {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 10px 15px rgba(0,0,0,.15);
+}
+
+/* Eyes */
+.eye-shade {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background: #000;
+    border-radius: 50%;
+    top: 35px;
+}
+.eye-shade.left { left: 25px; transform: rotate(220deg); }
+.eye-shade.right { right: 25px; transform: rotate(140deg); }
+
+.eye-white {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    top: 85px;
+    overflow: hidden;
+}
+.eye-white.left { left: 40px; }
+.eye-white.right { right: 40px; }
+
+.eye-ball {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    top: 9px;
+    left: 9px;
+}
+
+/* Nose & mouth */
+.nose {
+    position: absolute;
+    width: 35px;
+    height: 22px;
+    background: #000;
+    border-radius: 50%;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.mouth {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    border-bottom: 4px solid #000;
+    border-radius: 0 0 40px 40px;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* Body */
+.body {
+    width: 240px;
+    height: 270px;
+    margin: -20px auto 0;
+    border-radius: 120px;
+    background: #ffb6d5;
+    position: relative;
+}
+
+/* Hands */
+.hand {
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    background: #000;
+    border-radius: 30px;
+    top: 70px;
+    transition: transform 0.08s linear;
+}
+.hand.left { left: -40px; transform-origin: right center; }
+.hand.right { right: -40px; transform-origin: left center; }
+
+/* Feet */
+.foot {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background: #000;
+    bottom: -40px;
+    border-radius: 40px;
+}
+.foot.left { left: 0; }
+.foot.right { right: 0; }

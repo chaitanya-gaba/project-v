@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>❤️ My Private Space</title>
+
+  <link rel="stylesheet" href="css/base.css" />
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <span class="brand">My Private Space</span>
+      <a href="#thoughts">Thought</a>
+      <a href="#designs">Designs</a>
+      <a href="#messages">Message</a>
+    </div>
+
+    <div class="user-dropdown">
+  <button class="theme-toggle-btn" type="button">
+    🎨 Theme ▾
+  </button>
+
+  <div class="dropdown-menu">
+    <div class="themes-panel">
+      <button class="theme-option" data-theme="rose-day">🌹 Rose Day</button>
+      <button class="theme-option" data-theme="propose-day">💖 Propose Day</button>
+      <button class="theme-option" data-theme="chocolate-day">🤎 Chocolate Day</button>
+      <button class="theme-option" data-theme="teddy-day">💛 Teddy Day</button>
+      <button class="theme-option" data-theme="promise-day">💙 Promise Day</button>
+      <button class="theme-option" data-theme="hug-day">🧡 Hug Day</button>
+      <button class="theme-option" data-theme="kiss-day">💜 Kiss Day</button>
+      <button class="theme-option" data-theme="valentine-day">❤️ Valentine’s Day</button>
+    </div>
+  </div>
+</div>
+  </nav>
+
+  <!-- DASHBOARD -->
+  <main class="dashboard-container">
+
+    <!-- ROW 1 -->
+    <section class="row" id="thoughts">
+      <div class="col">
+        <div class="card" id="thought-of-day">
+          <h2>Thought of the Day</h2>
+          <p>Loading...</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card spotlight">
+          <h2>Spotlight</h2>
+          <p>Something meaningful, carefully chosen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROW 2 -->
+    <section class="row" id="designs">
+      <div class="col">
+        <div class="card css-sketch">
+          <!-- CSS sketch / illustration will live here -->
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card all-designs">
+          <h2>
+            <span class="open-designs-btn">All Designs➤</span>
+          </h2>
+
+          <div class="design-links">
+            <!-- injected by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="designs-modal">
+      <div class="modal">
+        <button class="close-modal">&times;</button>
+        <h2>All Designs</h2>
+        <div class="modal-design-list"></div>
+      </div>
+    </div>
+
+    <!-- ROW 3 -->
+    <section class="row" id="messages">
+      <div class="slider-container">
+
+        <div class="slider-wrapper">
+          <div class="slider-card active">
+            <div class="card">
+              <h2>Message</h2>
+              <p id="message-text">Loading...</p>
+            </div>
+          </div>
+
+          <div class="slider-card">
+            <div class="card">
+              <h2>Timeline</h2>
+              <p id="timeline-text">Loading...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button id="prev-slide">‹</button>
+          <button id="next-slide">›</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="dashboard-footer">
+    💌 Love, Warmth & Memories
+  </footer>
+
+  <!-- DATA + LOGIC -->
+  <script src="js/design-data.js"></script>
+  <script src="js/emotion-data.js"></script>
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>

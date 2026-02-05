@@ -1,0 +1,158 @@
+:root {
+    --env-color: #e63946;
+    --env-dark: #c1272d;
+    --letter-bg: #ffffff;
+    --heart-color: #ff0000;
+    --width: 60vmin;
+    --height: 40vmin;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe3e3;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.envelope-wrapper {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    cursor: pointer;
+    transition: transform 1.2s cubic-bezier(0.6, 0.05, 0.28, 0.91);
+    z-index: 10;
+}
+
+/* The main pocket body */
+.envelope-back {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--env-dark);
+    border-radius: 0 0 1vmin 1vmin;
+    z-index: 1;
+}
+
+/* The Letter - Initially tucked inside */
+.letter {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: var(--letter-bg);
+    padding: 5vmin;
+    box-sizing: border-box;
+    box-shadow: 0 0 3vmin rgba(0,0,0,0.1);
+    z-index: 2; /* Sits behind the front flaps */
+    text-align: center;
+    transition: transform 1.2s cubic-bezier(0.6, 0.05, 0.28, 0.91), z-index 0s 0.4s;
+    transform-origin: center;
+}
+
+.letter h2 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--env-color);
+    margin: 0;
+    font-size: 5vmin;
+}
+
+.letter p {
+    font-size: 2.2vmin;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Front Flaps (The Pocket) */
+.flap-left {
+    position: absolute;
+    bottom: 0; left: 0; width: 0; height: 0;
+    border-top: calc(var(--height) / 2) solid transparent;
+    border-bottom: calc(var(--height) / 2) solid transparent;
+    border-left: calc(var(--width) / 1.9) solid var(--env-color); 
+    z-index: 4;
+}
+.flap-right {
+    position: absolute;
+    bottom: 0; right: 0; width: 0; height: 0;
+    border-top: calc(var(--height) / 2) solid transparent;
+    border-bottom: calc(var(--height) / 2) solid transparent;
+    border-right: calc(var(--width) / 1.9) solid var(--env-color);
+    z-index: 4;
+}
+.flap-bottom {
+    position: absolute;
+    bottom: 0; width: 0; height: 0;
+    border-left: calc(var(--width) / 2) solid transparent;
+    border-right: calc(var(--width) / 2) solid transparent;
+    border-bottom: calc(var(--height) / 1.8) solid var(--env-dark);
+    z-index: 5;
+}
+
+/* Top Flap (The Lid) */
+.flap-top {
+    position: absolute;
+    top: 0; width: 0; height: 0;
+    border-left: calc(var(--width) / 2) solid transparent;
+    border-right: calc(var(--width) / 2) solid transparent;
+    border-top: calc(var(--height) / 1.7) solid var(--env-color);
+    transform-origin: top;
+    transition: transform 0.6s ease-in-out;
+    z-index: 6;
+}
+
+.heart {
+    position: absolute;
+    top: -4.5vmin; left: -3vmin;
+    width: 6vmin; height: 6vmin;
+    background: var(--heart-color);
+    transform: rotate(45deg);
+    z-index: 7;
+}
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 6vmin; height: 6vmin;
+    background: var(--heart-color);
+    border-radius: 50%;
+}
+.heart::before { left: -3vmin; }
+.heart::after { top: -3vmin; }
+
+/* --- REFINED TRANSITIONS --- */
+
+/* Envelope moves to bottom-right */
+.open.envelope-wrapper {
+    transform: translate(30vw, 30vh) scale(0.6);
+}
+
+/* Top Flap flips up */
+.open .flap-top {
+    transform: rotateX(180deg);
+    z-index: 0; /* Move lid behind the envelope */
+}
+
+/* Letter pops out FROM TOP then moves to center */
+.open .letter {
+    /* First move up to clear the envelope, then center */
+    transform: translate(-30vw, -45vh) scale(1.8);
+    z-index: 20; /* Pop to front only after starting the move */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.rose {
+    position: absolute;
+    font-size: 5vmin;
+    pointer-events: none;
+    z-index: 100;
+    animation: explode 2s forwards ease-out;
+}
+
+@keyframes explode {
+    0% { transform: translate(0, 0) scale(0); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) rotate(360deg) scale(1.5); opacity: 0; }
+}

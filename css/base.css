@@ -1,0 +1,463 @@
+/* =========================
+   VALENTINE THEME SYSTEM
+========================= */
+
+/* DEFAULT / FALLBACK */
+:root {
+  --bg-color: #fff0f5;
+  --card-bg: #ffffff;
+  --nav-bg: #ffe6f0;
+
+  --heading-color: #533333;
+  --text-color: #6b4a4a;
+  --soft-text: #8f6b76;
+
+  --accent-soft: rgba(255, 182, 193, 0.9);
+}
+
+/* 🌹 Rose Day – Deep Romantic Red */
+:root[data-theme="rose-day"] {
+  --bg-color: #fff1f2;
+  --card-bg: #ffffff;
+  --nav-bg: #ffd6da;
+
+  --heading-color: #7a1f2b;
+  --text-color: #8b2f3c;
+  --soft-text: #b45b6a;
+
+  --accent-soft: rgba(220, 38, 38, 0.85);
+}
+
+/* 💖 Propose Day – Soft Pink */
+:root[data-theme="propose-day"] {
+  --bg-color: #fff0f7;
+  --card-bg: #ffffff;
+  --nav-bg: #ffdbea;
+
+  --heading-color: #7a2e5d;
+  --text-color: #8f3f6d;
+  --soft-text: #b86f98;
+
+  --accent-soft: rgba(255, 105, 180, 0.85);
+}
+
+/* 🤎 Chocolate Day – Warm Brown */
+:root[data-theme="chocolate-day"] {
+  --bg-color: #fdf6f0;
+  --card-bg: #ffffff;
+  --nav-bg: #f3dfcf;
+
+  --heading-color: #5a3825;
+  --text-color: #6b4633;
+  --soft-text: #9a6b50;
+
+  --accent-soft: rgba(161, 98, 7, 0.7);
+}
+
+/* 💛 Teddy Day – Soft Yellow */
+:root[data-theme="teddy-day"] {
+  --bg-color: #fffbea;
+  --card-bg: #ffffff;
+  --nav-bg: #fff1c1;
+
+  --heading-color: #7a5b1a;
+  --text-color: #8f6b22;
+  --soft-text: #b89b4a;
+
+  --accent-soft: rgba(250, 204, 21, 0.7);
+}
+
+/* 💙 Promise Day – Calm Blue */
+:root[data-theme="promise-day"] {
+  --bg-color: #f0f6ff;
+  --card-bg: #ffffff;
+  --nav-bg: #dbeafe;
+
+  --heading-color: #1e3a8a;
+  --text-color: #334e91;
+  --soft-text: #6b85c3;
+
+  --accent-soft: rgba(59, 130, 246, 0.7);
+}
+
+/* 🧡 Hug Day – Warm Orange */
+:root[data-theme="hug-day"] {
+  --bg-color: #fff7ed;
+  --card-bg: #ffffff;
+  --nav-bg: #fed7aa;
+
+  --heading-color: #7c2d12;
+  --text-color: #9a3f18;
+  --soft-text: #c76b3a;
+
+  --accent-soft: rgba(251, 146, 60, 0.75);
+}
+
+/* 💜 Kiss Day – Romantic Purple */
+:root[data-theme="kiss-day"] {
+  --bg-color: #faf5ff;
+  --card-bg: #ffffff;
+  --nav-bg: #e9d5ff;
+
+  --heading-color: #5b2b82;
+  --text-color: #6d3f9c;
+  --soft-text: #9b75c7;
+
+  --accent-soft: rgba(168, 85, 247, 0.7);
+}
+
+/* ❤️🤍 Valentine’s Day – Red & White */
+:root[data-theme="valentine-day"] {
+  --bg-color: #fff5f5;
+  --card-bg: #ffffff;
+  --nav-bg: #ffe4e6;
+
+  --heading-color: #7f1d1d;
+  --text-color: #991b1b;
+  --soft-text: #c44b4b;
+
+  --accent-soft: rgba(239, 68, 68, 0.8);
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   COLOR SYSTEM
+========================= */
+:root {
+  --bg-color: #fff0f5;
+  --card-bg: #ffffff;
+  --nav-bg: #ffe6f0;
+
+  --heading-color: #533333;
+  --text-color: #6b4a4a;
+  --soft-text: #8f6b76;
+
+  --accent-soft: rgba(255, 182, 193, 0.9);
+}
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+  font-family: Georgia, serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* =========================
+   NAV BAR
+========================= */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--heading-color);
+
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+
+  transition: background 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 182, 193, 0.25);
+}
+.user-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background: var(--card-bg);
+  width: 10rem;
+  padding: 0.9rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.user-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.themes-panel button {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--soft-text);
+  text-align: left;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* =========================
+   ROWS & COLUMNS
+========================= */
+.row {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: stretch;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+  width: 100%;
+  height: 100%;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   SPOTLIGHT HOVER POLISH
+========================= */
+.spotlight {
+  cursor: pointer;
+  position: relative;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.spotlight:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(255, 105, 180, 0.25);
+}
+
+/* =========================
+   ROW 2 EMPHASIS
+========================= */
+#designs .card {
+  padding: 2.4rem;
+}
+
+.all-designs .design-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.all-designs .design-links a {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  background: #fff0f5;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+/* =========================
+   FEATURED BADGE
+========================= */
+.spotlight::before {
+  content: "Featured";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #ff8fab,
+    #ffb3c6
+  );
+
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.35);
+}
+
+/* =========================
+   CSS SKETCH PLACEHOLDER
+========================= */
+.css-sketch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soft-text);
+  font-style: italic;
+}
+
+.css-sketch::after {
+  content: "A soft sketch will live here ✿";
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,182,193,0.35);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 2.2rem;
+  width: 90%;
+  max-width: 600px;
+}
+
+.modal-design-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.modal-design-list a {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  background: #fff0f5;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+/* =========================
+   ROW 3 SLIDER
+========================= */
+.slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+.slider-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.slider-card.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  pointer-events: none;
+}
+
+.slider-controls button {
+  pointer-events: auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-soft);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =========================
+   TEXT
+========================= */
+h2 {
+  color: var(--heading-color);
+  font-weight: normal;
+}
+
+p {
+  color: var(--soft-text);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.dashboard-footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-style: italic;
+  color: var(--soft-text);
+}

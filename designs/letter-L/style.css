@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #a6c1ee, #fbc2eb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+/* Soft glow and moon effect */
+.moon {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at 30% 30%, #fff, #f2d8ff 60%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.3;
+  box-shadow: 0 0 80px 30px rgba(255,255,255,0.3);
+  z-index: -1;
+}
+
+/* Floating hearts and sparkles */
+.floating {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  animation: float 7s linear infinite;
+  user-select: none;
+  font-size: 1.5em;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Card and message */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 40px 30px;
+  margin: 2rem;
+  width: 55vw;
+  /* height: 600px; */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  z-index: 10;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+.signature {
+  margin-top: 25px;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* Button styling */
+.btn {
+  margin-top: 30px;
+  background: #fff;
+  color: #ff6b81;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Pacifico', cursive;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 107, 129, 0.4);
+}
+
+.btn:hover {
+  background: #ff6b81;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 5px 30px rgba(255, 107, 129, 0.6);
+}
+
+/* Optional fade-in for everything */
+.fadeIn {
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+audio {
+  display: none;
+}

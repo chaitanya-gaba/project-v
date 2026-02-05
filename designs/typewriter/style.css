@@ -1,0 +1,95 @@
+body {
+    background: #111;
+    color: #f5f5f5;
+    font-family: 'Special Elite', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* Audio container pill */
+#audio-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 5s ease-in-out;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 50px;
+    overflow: hidden;
+    background: rgba(255, 100, 150, 0.2);
+    box-shadow: 0 0 20px rgba(255, 100, 150, 0.4);
+    z-index: 10;
+}
+
+#audio-container.bottom {
+    transform: translate(-50%, calc(100vh - 50px - 50%));
+}
+
+audio {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    filter: hue-rotate(330deg) brightness(1.2);
+}
+
+/* Chrome/Safari controls */
+audio::-webkit-media-controls-panel {
+    background: rgba(255, 100, 150, 0.2);
+    border-radius: 50px;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider {
+    filter: hue-rotate(330deg) brightness(1.2);
+}
+
+/* Typewriter text */
+.typewriter {
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+    display: inline-block;
+    color: #f5f5f5;
+    line-height: 1.2;
+}
+
+.typewriter.show {
+    opacity: 1;
+}
+
+/* Highlight heartbeat word */
+.highlight {
+    color: #ff5252;
+    display: inline-block;
+    animation: heartbeat 1.3s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.25); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.25); }
+    70% { transform: scale(1); }
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 4px;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (max-width: 500px) {
+    .typewriter { font-size: 1.5rem; letter-spacing: 0.06em; }
+    audio { height: 45px; }
+}

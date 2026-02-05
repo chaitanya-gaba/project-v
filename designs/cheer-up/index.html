@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Are Here</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Indie Flower', cursive;
+      color: #3e2723;
+    }
+
+    .message-box {
+      background-color: #fffaf0;
+      padding: 2rem 3rem;
+      border: 2px dashed #f57c00;
+      border-radius: 15px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .message-box h1 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .message-box p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+
+    .heart {
+      font-size: 2rem;
+      animation: beat 1.5s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <h1>You Are Here 🌍</h1>
+    <p>
+      Not by accident. Not by mistake.<br>
+      You're here — because you’re strong enough to be.<br><br>
+      You don’t need to explain, prove, or shrink.<br>
+      Just breathe. Just be. That’s enough today.<br><br>
+      <span class="heart">🖤</span>
+    </p>
+    <p style="font-size: 1rem; color: #8d6e63;">– In case no one said it today... I'm proud of you.</p>
+  </div>
+</body>
+</html>
