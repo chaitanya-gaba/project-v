@@ -356,7 +356,7 @@ function getTodayKey(prefix) {
 // LAUNCH COUNTDOWN GATE
 // ===================================================
 document.addEventListener("DOMContentLoaded", () => {
-  const launchDate = new Date("2026-02-06T18:30:00Z").getTime();
+  const launchDate = new Date("2026-02-07T00:00:00").getTime();
   const overlay = document.getElementById("launch-overlay");
 
   if (!overlay) return;
