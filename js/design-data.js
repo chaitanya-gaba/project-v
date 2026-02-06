@@ -14,11 +14,15 @@ window.DESIGN_PROJECTS = [
   {
     name: "Memory Card Design",
     folder: "1stday"
+  },
+  {
+    name: "मेरे गुलाब",
+    fodler: "rose-day"
   }
 ];
 
 window.SPOTLIGHT_DESIGN = {
-  name: "Memory Card Design",
-  folder: "1stday",
-  description: "A soft, handwritten love letter interface."
+  name: "मेरे गुलाब",
+  folder: "rose-day",
+  description: "मेरे जीवन के गुलाब"
 };
