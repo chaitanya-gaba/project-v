@@ -36,8 +36,8 @@ window.DEFAULT_MESSAGES = [
 
 window.THEME_EMOTIONS = {
   "rose-day": {
-    thought: "Love blooms boldly when the heart dares. 🌹",
-    message: "Today is about passion — the kind that makes the heart fearless."
+    thought: "Pyaar bhi ek phool hai… jo sirf himmat walon ke dil mein khilta hai. 🌹",
+    message: "Tumhari muskurahat ne mujhe sikha diya — mohabbat mein jeet haar nahi hoti, bas ehsaas hota hai."
   },
 
   "propose-day": {
