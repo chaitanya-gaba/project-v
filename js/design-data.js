@@ -17,7 +17,7 @@ window.DESIGN_PROJECTS = [
   },
   {
     name: "मेरे गुलाब",
-    fodler: "rose-day"
+    folder: "rose-day"
   }
 ];
 

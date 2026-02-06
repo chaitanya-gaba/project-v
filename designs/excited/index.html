@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive Romantic Experience</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  body {
+    background: black;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .scene.active {
+    display: flex;
+  }
+
+  .type {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  button {
+    margin-top: 40px;
+    padding: 14px 30px;
+    font-size: 1rem;
+    background: none;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background: white;
+    color: black;
+  }
+
+  .choice {
+    margin: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+
+  .choice:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .floating-word {
+    position: absolute;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    animation: float 6s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
+  .heartbeat {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+
+  #scene5, #scene6 {
+    background: radial-gradient(circle at center, #1a1a2e, #000);
+  }
+
+  #countdown {
+    letter-spacing: 4px;
+    margin-top: 40px;
+    opacity: 0.8;
+  }
+
+  .glow {
+    animation: glowPulse 2s infinite ease-in-out;
+  }
+
+  @keyframes glowPulse {
+    0% { text-shadow: 0 0 10px rgba(255,255,255,0.2); }
+    50% { text-shadow: 0 0 30px rgba(255,100,200,0.6); }
+    100% { text-shadow: 0 0 10px rgba(255,255,255,0.2); }
+  }
+</style>
+</head>
+<body>
+
+<!-- SCENE 1: INTRO -->
+<div class="scene active" id="scene1">
+  <div class="type" id="introText"></div>
+  <button id="startBtn" style="display:none">Start</button>
+</div>
+
+<!-- SCENE 2: CHOICE -->
+<div class="scene" id="scene2">
+  <div class="type heartbeat">
+    Do you still feel something…  
+    <br><br>
+  </div>
+  <div class="choice" onclick="answer()">Yes</div>
+  <div class="choice" onclick="answer()">I don’t know</div>
+</div>
+
+<!-- SCENE 3: MEMORY REVEAL -->
+<div class="scene" id="scene3">
+  <div class="type">
+    Move your finger.
+  </div>
+</div>
+
+<!-- SCENE 4: ANTICIPATION -->
+<div class="scene" id="scene4">
+  <div class="type">
+    You said something feels missing.<br><br>
+    Let me show you what I never finished.
+  </div>
+  <button onclick="loadFinal()">Continue</button>
+</div>
+
+<!-- SCENE 5: COUNTDOWN HIGH-NOTE -->
+<div class="scene" id="scene5">
+  <div class="type" id="finalText">
+    This wasn’t about fixing anything.
+    <br><br>
+    It was about remembering how it feels
+    when something real is about to begin.
+  </div>
+  <div id="countdown"></div>
+  <button id="finalBtn" style="display:none" onclick="finalReveal()">See what’s next</button>
+</div>
+
+<!-- SCENE 6: FINAL SECRET SCENE -->
+<div class="scene" id="scene6">
+  <div class="type glow">
+    I want to take you somewhere.
+    <br><br>
+    Not to talk.
+    <br>
+    Not to fix.
+    <br><br>
+    Just to feel excited again.
+  </div>
+  <button onclick="endExperience()">Let’s do it</button>
+</div>
+
+<script>
+  // ---------------- TYPEWRITER INTRO ----------------
+  const introLines = [
+    "This isn’t a website.",
+    "It’s something I never showed you.",
+    "Put your sound on."
+  ];
+
+  let introIndex = 0;
+  let charIndex = 0;
+  const introEl = document.getElementById("introText");
+  const startBtn = document.getElementById("startBtn");
+
+  function typeIntro() {
+    if (charIndex < introLines[introIndex].length) {
+      introEl.innerHTML += introLines[introIndex][charIndex];
+      charIndex++;
+      setTimeout(typeIntro, 50);
+    } else {
+      introEl.innerHTML += "<br><br>";
+      introIndex++;
+      charIndex = 0;
+      if (introIndex < introLines.length) {
+        setTimeout(typeIntro, 700);
+      } else {
+        startBtn.style.display = "inline-block";
+      }
+    }
+  }
+
+  typeIntro();
+
+  startBtn.onclick = () => goToScene(2);
+
+  // ---------------- SCENE NAVIGATION ----------------
+  function goToScene(n) {
+    document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+    document.getElementById(`scene${n}`).classList.add('active');
+  }
+
+  function answer() {
+    goToScene(3);
+  }
+
+  // ---------------- SCENE 3: CURSOR FLOATING WORDS ----------------
+  const scene3 = document.getElementById("scene3");
+  const words = ["Electric", "Safe", "Home", "Warm", "Alive"];
+
+  scene3.addEventListener("mousemove", (e) => {
+    if (Math.random() > 0.92) {
+      const word = document.createElement("div");
+      word.className = "floating-word";
+      word.innerText = words[Math.floor(Math.random() * words.length)];
+      word.style.left = e.clientX + "px";
+      word.style.top = e.clientY + "px";
+      scene3.appendChild(word);
+
+      setTimeout(() => word.remove(), 4000);
+    }
+  });
+
+  setTimeout(() => {
+    scene3.addEventListener("click", () => goToScene(4));
+  }, 3000);
+
+  // ---------------- SCENE 4 -> SCENE 5 ----------------
+  function loadFinal() {
+    goToScene(5);
+    setTimeout(startCountdown, 800);
+  }
+
+  // ---------------- SCENE 5: COUNTDOWN ----------------
+  let count = 5;
+  const countdownEl = document.getElementById("countdown");
+  const finalBtn = document.getElementById("finalBtn");
+
+  function startCountdown() {
+    countdownEl.classList.add("glow");
+    const timer = setInterval(() => {
+      countdownEl.innerText = count;
+      count--;
+
+      if (count < 0) {
+        clearInterval(timer);
+        countdownEl.innerText = "Ready?";
+        finalBtn.style.display = "inline-block";
+      }
+    }, 1000);
+  }
+
+  // ---------------- FINAL REVEAL -> SCENE 6 ----------------
+  function finalReveal() {
+    goToScene(6);
+  }
+
+  // ---------------- END EXPERIENCE ----------------
+  function endExperience() {
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:black;
+        color:white;
+        font-size:1.6rem;
+        text-align:center;
+        padding:40px;
+      ">
+        This was the only invitation.
+        <br><br>
+        I’ll tell you the rest in person.
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>

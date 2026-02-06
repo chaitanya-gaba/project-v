@@ -1,0 +1,226 @@
+/* 🌸 GENERAL STYLES 🌸 */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fff4e6;
+    color: #3e2723;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe0f0, #fff4e6);
+    overflow-x: hidden;
+    position: relative;
+    perspective: 1000px; /* For 3D flip effect */
+}
+
+/* 🌼 CONTAINER STYLES 🌼 */
+.feelings-container {
+    background-color: #ffffff;
+    border: 5px solid #ff6f91;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* 💖 HEADER STYLES 💖 */
+.header {
+    font-size: 2.5em;
+    color: #d81b60;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+}
+.header::before, .header::after {
+    content: '❤';
+    font-size: 0.6em;
+    color: #ff6f91;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.header::before { left: -30px; }
+.header::after { right: -30px; }
+
+/* 💌 MESSAGE BODY 💌 */
+.message-body {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 25px;
+    white-space: pre-wrap;
+    color: #4a148c;
+}
+.message-body strong {
+    color: #ad1457;
+    font-size: 1.2em;
+}
+
+/* 🌷 SEPARATOR */
+.separator {
+    border: none;
+    height: 2px;
+    background-color: #f8bbd0;
+    margin: 20px 0;
+    position: relative;
+}
+.separator::before, .separator::after {
+    content: '✨';
+    position: absolute;
+    font-size: 1.2em;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffd700;
+}
+.separator::before { left: 10%; }
+.separator::after { right: 10%; }
+
+/* 🌺 ICONS SECTION */
+.icons-section {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #c2185b;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.icons-section span {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    text-align: left;
+}
+.icons-section span::before {
+    position: absolute;
+    left: 0;
+    font-size: 1.1em;
+    line-height: 1;
+}
+.icons-section span:nth-child(1)::before { content: '💖'; }
+.icons-section span:nth-child(2)::before { content: '✨'; }
+.icons-section span:nth-child(3)::before { content: '💋'; }
+.icons-section span:nth-child(4)::before { content: '💞'; }
+
+
+/* 🐻 BUBU & DUDU SECTION (The Flip Box) 🐻 */
+.bubu-dudu {
+    background-color: #fce4ec;
+    border: 2px solid #e91e63; /* Changed to solid for a box look */
+    border-radius: 10px;
+    padding: 0; /* Remove padding from container */
+    margin: 20px 0;
+    position: relative;
+    height: 120px; /* Fixed height for the closed box */
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+/* Content inside the box */
+.bubu-dudu-cover, .bubu-dudu-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Front side (Cover) */
+.bubu-dudu-cover {
+    background-color: #e91e63; /* Deep pink cover */
+    color: white;
+    z-index: 2;
+}
+.open-button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.open-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Back side (Content) */
+.bubu-dudu-content {
+    background-color: #fce4ec; /* Light pink background */
+    color: #880e4f;
+    transform: rotateY(180deg); /* Start rotated */
+    font-style: italic;
+}
+.bubu-dudu.flipped {
+    transform: rotateY(180deg); /* Flip the whole box on click */
+}
+.bubu-dudu-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #c2185b;
+    margin-bottom: 10px;
+}
+
+
+/* 🌼 FOOTER and FLOATING HEARTS (from previous version) */
+.footer {
+    font-size: 0.9em;
+    color: #6a1b9a;
+    margin-top: 20px;
+}
+.footer strong {
+    color: #ad1457;
+}
+
+/* 💖 FLOATING HEARTS (PAGE BACKGROUND) 💖 */
+.heart {
+    position: absolute;
+    color: #ff6f91;
+    font-size: 1.5em;
+    animation: floatHeart 10s ease-in-out infinite;
+    opacity: 0;
+    pointer-events: none;
+}
+.heart:nth-child(1) { top: 10%; left: 5%; font-size: 1.2em; animation-delay: 0s; }
+.heart:nth-child(2) { top: 20%; left: 90%; font-size: 1.8em; animation-delay: 1s; }
+.heart:nth-child(3) { top: 40%; left: 15%; font-size: 1.4em; animation-delay: 2s; }
+.heart:nth-child(4) { top: 60%; left: 80%; font-size: 1.6em; animation-delay: 3s; }
+.heart:nth-child(5) { top: 80%; left: 30%; font-size: 1.3em; animation-delay: 4s; }
+.heart:nth-child(6) { top: 5%; left: 70%; font-size: 1.7em; animation-delay: 5s; }
+.heart:nth-child(7) { top: 75%; left: 50%; font-size: 1.5em; animation-delay: 6s; }
+.heart:nth-child(8) { top: 30%; left: 2%; font-size: 1.9em; animation-delay: 7s; }
+
+@keyframes floatHeart {
+    0% { transform: translateY(0) scale(0.8); opacity: 0; }
+    20% { opacity: 0.8; }
+    80% { opacity: 0.8; }
+    100% { transform: translateY(-50px) scale(1.2); opacity: 0; }
+}
+
+/* 🌹 TOP-LEFT AND BOTTOM-RIGHT CORNER FLOWERS 🌹 */
+.corner-decoration {
+    position: absolute;
+    font-size: 3em;
+    color: #ff80ab;
+    z-index: 0;
+    opacity: 0.7;
+}
+.top-left { top: 20px; left: 20px; transform: rotate(-15deg); }
+.bottom-right { bottom: 20px; right: 20px; transform: rotate(15deg); }

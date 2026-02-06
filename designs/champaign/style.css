@@ -1,0 +1,23 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #F98CAB;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+#love-fireworks {
+  height: 90vh;
+}
+
+#love-fireworks{
+  visibility: hidden;
+}
