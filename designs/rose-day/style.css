@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle, #82707a, #24111e 100%);
+}
+
+/* TEXT LAYER */
+main {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+h1 {
+  font-family: "Niconne", cursive;
+  font-size: 10vw;
+  margin: 1rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+p {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 16px;
+  font-size: max(3vw, 15px);
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* CINEMATIC VIGNETTE */
+#filter {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* THREE CANVAS */
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  user-select: none;
+}
