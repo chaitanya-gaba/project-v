@@ -1,8 +1,8 @@
 window.TIMELINE_DATA = [
   {
-    date: "07 Feb 2026",
+    date: "08 Oct 2025",
     text: "It all started here.",
-    emoji: "📍"
+    emoji: "☎"
   },
   {
     date: "14 Feb 2026",

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propose Day</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+      margin: 0;
+    }
+
+    .white { color: white; }
+    .love { color: #ff4b5c; display: inline-block; }
+
+    /* Heartbeat animation only for Love */
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.3); }
+      50% { transform: scale(1.2); }
+      75% { transform: scale(1.3); }
+    }
+
+    .heartbeat {
+      animation: heartbeat 1s infinite;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    button {
+      font-size: 1.5rem;
+      padding: 10px 25px;
+      margin: 0 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .yes {
+      background-color: #ff4b5c;
+      color: white;
+    }
+
+    .no {
+      background-color: white;
+      color: #ff4b5c;
+      border: 2px solid #ff4b5c;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Typewriter text */
+    #message {
+      margin-top: 30px;
+      font-size: 1.8rem;
+      color: white;
+      white-space: pre-wrap;
+      text-align: center;
+      min-height: 2em;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>
+    <span class="white">I </span>
+    <span class="love heartbeat">Love </span>
+    <span class="white">You</span>
+  </h1>
+
+  <div class="buttons">
+    <span style="font-size: 1.5rem; color: white;">Do you?</span>
+    <br><br>
+    <button class="yes" id="yesBtn">Yes, I Love You Chinu.</button>
+    <button class="no" id="noBtn">No</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const messageDiv = document.getElementById('message');
+
+    let yesFontSize = 1.5; // starting font-size in rem
+    const growthFactor = 3.2; // exponential growth factor
+
+    noBtn.addEventListener('click', () => {
+      // exponential increase
+      yesFontSize *= growthFactor;
+      yesBtn.style.fontSize = yesFontSize + 'rem';
+    });
+
+    yesBtn.addEventListener('click', () => {
+      // Hide No button
+      noBtn.style.display = 'none';
+      
+      // Reset Yes button size
+      yesFontSize = 1.5;
+      yesBtn.style.fontSize = yesFontSize + 'rem';
+
+      // Show romantic message with typewriter effect
+      const text = "Tuu meri picture ki heroine hai… aur main tera anti-hero 😎\nLe kar jaaunga bas main hi…\nSamajh le, life ki sabse best scene ab start ho gayi ❤️";
+      typeWriter(text, messageDiv, 0);
+    });
+
+    function typeWriter(text, element, i) {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(() => typeWriter(text, element, i), 100); // speed of typing
+      }
+    }
+  </script>
+
+</body>
+</html>

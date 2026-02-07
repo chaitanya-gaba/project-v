@@ -4,6 +4,10 @@ window.DESIGN_BASE_PATH = "./designs/";
 
 window.DESIGN_PROJECTS = [
   {
+    name: "हाँ या ना",
+    folder: "yes-no"
+  },
+  {
     name: "Love Letter UI",
     folder: "letter-L"
   },
@@ -23,6 +27,7 @@ window.DESIGN_PROJECTS = [
     name: "मेरी जान",
     folder: "propose-day"
   }
+  
 ];
 
 window.SPOTLIGHT_DESIGN = {
