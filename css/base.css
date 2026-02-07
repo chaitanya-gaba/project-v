@@ -440,6 +440,35 @@ body {
   cursor: pointer;
 }
 
+/* Timeline - Node */
+
+.timeline-node .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.timeline-node .date {
+  background: var(--accent-soft);  /* use accent color instead of card-bg */
+  color: var(--heading-color);      /* readable text on accent */
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;              /* keep date in single line */
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+}
+
+.timeline-node .text {
+  background: var(--accent-soft); /* theme accent color */
+  color: var(--heading-color);     /* theme heading color for contrast */
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;  
+  max-width: 300px;               /* auto-expands but limits width */
+  min-width: 50px;
+  white-space: nowrap;
+}
+
 /* =========================
    TEXT
 ========================= */

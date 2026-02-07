@@ -41,8 +41,8 @@ window.THEME_EMOTIONS = {
   },
 
   "propose-day": {
-    thought: "Some questions change everything. 💖",
-    message: "A gentle moment, a hopeful heart, and a question that matters."
+    thought: "Aaj ka din hai… dil ki baat kehne ka 💌",
+    message: "Main tumhari har ek baat se pyaar karta hoon — tumhari muskaan, tumhara gussa, tumhari hasi, aur bas tumhari mohabbat bhari presence. Kya tum meri life mein hamesha ke liye saath chalogi?"
   },
 
   "chocolate-day": {

@@ -18,11 +18,15 @@ window.DESIGN_PROJECTS = [
   {
     name: "मेरे गुलाब",
     folder: "rose-day"
+  },
+  {
+    name: "मेरी जान",
+    folder: "propose-day"
   }
 ];
 
 window.SPOTLIGHT_DESIGN = {
-  name: "मेरे गुलाब",
-  folder: "rose-day",
-  description: "मेरे जीवन के गुलाब"
+  name: "मेरी जान",
+  folder: "propose-day",
+  description: "तुम्हारी मुस्कान, तुम्हारी हर अदा, मेरे दिल की सबसे खूबसूरत वजह"
 };

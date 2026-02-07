@@ -388,3 +388,8 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   const timer = setInterval(updateCountdown, 1000);
 });
+
+const timelineSlot = document.getElementById("timeline-slot");
+if (timelineSlot && window.mountTimeline) {
+  window.mountTimeline(timelineSlot);
+}

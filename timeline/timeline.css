@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  background: #fff0f5;
+  font-family: Georgia, serif;
+}
+
+.timeline-wrapper {
+  padding: 3rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* COLLAPSE / EXPAND */
+.timeline {
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.timeline.collapsed {
+  max-height: 160px;
+}
+
+.timeline.expanded {
+  max-height: 2000px;
+}
+
+/* ROW */
+.timeline-row {
+  position: relative;
+  height: 120px;
+  margin-bottom: 8px;
+}
+
+/* SVG THREAD */
+.thread-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.thread-path {
+  fill: none;
+  stroke: #ff4d88;
+  stroke-width: 2.5;
+  stroke-dasharray: 6 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px rgba(255, 77, 136, 0.6));
+}
+
+/* NODES */
+.timeline-node {
+  position: absolute;
+  top: 36px;
+  z-index: 2;
+  text-align: center;
+  color: #b5173f;
+  width: 120px;
+  transform: translate(-50%, -21px);
+}
+
+.timeline-node.left {
+  left: 20%;
+}
+
+.timeline-node.right {
+  left: 80%;
+}
+
+.timeline-node .emoji {
+  width: 42px;
+  height: 42px;
+  margin: auto;
+  background: #fff0f5;
+  border: 2px dashed #ff4d88;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.timeline-node .date {
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.timeline-node .text {
+  font-size: 0.8rem;
+}
+
+/* INFINITY */
+.timeline-node.infinity .emoji {
+  border: none;
+  font-size: 1.8rem;
+}
+
+/* BUTTON */
+.expand-btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px dashed #ff4d88;
+  color: #ff4d88;
+  padding: 0.4rem 0.8rem;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+#timeline {
+  position: relative;
+}
+
+#timeline-svg {
+  width: 100%;
+  display: block;
+}
+
+/* Only affects expanded timeline nodes with left/right classes */
+.timeline-node.left .date,
+.timeline-node.left .text {
+  text-align: left;
+  margin-left: 50px; /* space from node */
+}
+
+.timeline-node.right .date,
+.timeline-node.right .text {
+  text-align: right;
+  margin-right: 50px; /* space from node */
+}
+
+.timeline-node .text-wrapper {
+  background: #ff4d88;       /* white background */
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;  /* wrap content */
+  width: 40px;
+  max-width: 250px;       /* increase width as needed */
+  word-wrap: break-word;  /* wrap long text */
+}
