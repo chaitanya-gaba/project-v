@@ -204,25 +204,35 @@ body {
 .theme-toggle-btn:hover {
   background: rgba(255, 182, 193, 0.25);
 }
+
 .user-dropdown {
   position: relative;
-  cursor: pointer;
 }
 
 .dropdown-menu {
-  display: none;
   position: absolute;
   right: 0;
   top: 120%;
+
   background: var(--card-bg);
   width: 10rem;
   padding: 0.9rem;
   border-radius: 14px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+
+  opacity: 0;
+  backdrop-filter: blur(80px);
+  pointer-events: none;
+  transform: translateY(6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
-.user-dropdown:hover .dropdown-menu {
-  display: block;
+.user-dropdown.open .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .themes-panel button {
@@ -269,7 +279,7 @@ body {
   height: 100%;
   background: var(--card-bg);
   border-radius: 16px;
-  padding: 1.8rem;
+  padding: 2.2rem;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
@@ -324,10 +334,10 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.03em;
 
-  color: #fff;
+  color: var(--text-color);
   background: linear-gradient(
     135deg,
-    #ff8fab,
+    var(--bg-color),
     #ffb3c6
   );
 
@@ -445,7 +455,7 @@ body {
 .timeline-node .content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: normal;
 }
 
 .timeline-node .date {

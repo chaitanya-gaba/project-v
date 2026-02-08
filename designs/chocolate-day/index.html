@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocolate Day - 3 Bites</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Bitter:700&display=swap');
+
+*, *:before, *:after { box-sizing: border-box; }
+
+html, body { height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F47321;
+  perspective: 1000px;
+  font-family: 'Bitter', serif;
+  flex-direction: column;
+}
+
+.instructions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0.5rem;
+  color: #fff;
+}
+
+.chocolate-button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transform: rotateX(15deg) rotateZ(15deg);
+  position: relative;
+  font-size: 1rem;
+}
+
+/* Chocolate Bar */
+.bar {
+  display: flex;
+  width: 360px;
+  height: 80px;
+  border-radius: 0.3em;
+  background: #754C28;
+  position: relative;
+  overflow: hidden;
+}
+
+.segment {
+  flex: 1;
+  border-left: 2px solid #432B16;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.segment:first-child { border-left: none; }
+
+.segment.bitten {
+  background: #432B16;
+  transform: translateY(10px);
+}
+
+.segment span {
+  color: #fff;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.crumbs {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #432B16;
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.message {
+  opacity: 0;
+  transform: translateY(20px);
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  transition: opacity 0.6s, transform 0.6s;
+  text-align: center;
+}
+.message.show { opacity:1; transform: translateY(0); }
+
+.final-message {
+  opacity: 0;
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 50px;
+  text-align: center;
+  transition: opacity 1s;
+}
+.final-message.show { opacity:1; }
+</style>
+</head>
+<body>
+
+<div class="instructions">Click on the chocolate bar to take bites!</div>
+
+<button class="chocolate-button">
+  <div class="bar">
+    <div class="segment" data-msg="Kuch sweets toh sweet hote hain… par tumhari sweetness ka koi muqabla nahi."><span>Bite 1</span></div>
+    <div class="segment" data-msg="Break ka maza tabhi hai jab share ho… jaise yeh Kit-Kat, aur jaise hum."><span>Bite 2</span></div>
+    <div class="segment" data-msg="Zindagi chocolate deti hai… aur kismet ne tum diya. Sabse best flavor."><span>Bite 3</span></div>
+  </div>
+  <div class="crumbs"></div>
+</button>
+
+<div class="messages">
+  <div class="message" id="msg1"></div>
+  <div class="message" id="msg2"></div>
+  <div class="message" id="msg3"></div>
+</div>
+
+<div class="final-message">Happy Chocolate Day!</div>
+
+<script>
+const segments = document.querySelectorAll('.segment');
+const messages = [document.getElementById('msg1'), document.getElementById('msg2'), document.getElementById('msg3')];
+const finalMsg = document.querySelector('.final-message');
+let bitesTaken = 0;
+
+segments.forEach((seg, i) => {
+  seg.addEventListener('click', () => {
+    if(seg.classList.contains('bitten')) return;
+
+    // Take bite
+    seg.classList.add('bitten');
+
+    // Show message
+    messages[i].textContent = seg.dataset.msg;
+    messages[i].classList.add('show');
+
+    // Crumbs animation
+    const crumbs = document.querySelector('.crumbs');
+    crumbs.style.opacity = 1;
+    crumbs.style.transform = `translate(${Math.random()*40-20}px, ${Math.random()*50+20}px)`;
+
+    bitesTaken++;
+    if(bitesTaken === 3){
+      setTimeout(()=> finalMsg.classList.add('show'), 800);
+    }
+  });
+});
+</script>
+
+</body>
+</html>

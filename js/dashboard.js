@@ -11,26 +11,6 @@ if (!window.DESIGN_BASE_PATH) {
 }
 
 // ===================================================
-// STATIC CONTENT DATA (LOCAL TO DASHBOARD)
-// ===================================================
-
-const thoughts = [
-  "Love is composed of a single soul inhabiting two bodies. 💕",
-  "Every moment with you feels like a dream. 🌸",
-  "Romance is the art of making someone feel extraordinary. 💌"
-];
-
-const messages = [
-  "Hey love, remember our first adventure? 💖",
-  "You make my days brighter every day. 🌹"
-];
-
-const timeline = [
-  "2026-01-01 — First meeting 💕",
-  "2026-02-05 — Project-V created ❤️"
-];
-
-// ===================================================
 // DATE → THEME MAP
 // ===================================================
 
@@ -93,6 +73,20 @@ function initThemeControls() {
     });
   });
 }
+
+const themeDropdown = document.querySelector(".user-dropdown");
+let dropdownTimeout;
+
+themeDropdown.addEventListener("mouseenter", () => {
+  clearTimeout(dropdownTimeout);
+  themeDropdown.classList.add("open");
+});
+
+themeDropdown.addEventListener("mouseleave", () => {
+  dropdownTimeout = setTimeout(() => {
+    themeDropdown.classList.remove("open");
+  }, 120); // forgiving delay
+});
 
 // ===================================================
 // INITIAL THEME RESOLUTION

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #fff0f5;
+  /* background: #fff0f5; */
   font-family: Georgia, serif;
 }
 
@@ -55,7 +55,7 @@ body {
   z-index: 2;
   text-align: center;
   color: #b5173f;
-  width: 120px;
+  /* width: 120px; */
   transform: translate(-50%, -21px);
 }
 
