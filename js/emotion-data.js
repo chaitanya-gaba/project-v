@@ -46,8 +46,8 @@ window.THEME_EMOTIONS = {
   },
 
   "chocolate-day": {
-    thought: "Sweetness is meant to be shared. 🤎",
-    message: "Comfort, warmth, and indulgence — just like us."
+    thought: "Zindagi thodi si meethi honi chahiye… bilkul tumhari yaadon ki tarah 🍫",
+    message: "Chocolate ki tarah tum bhi dheere dheere ghul jaati ho meri zindagi mein — aur phir har din ko thoda sa aur khoobsurat bana deti ho. Tum saath ho toh kadvi si baatein bhi meethi lagne lagti hain."
   },
 
   "teddy-day": {

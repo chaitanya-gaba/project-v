@@ -26,6 +26,14 @@ window.DESIGN_PROJECTS = [
   {
     name: "मेरी जान",
     folder: "propose-day"
+  },
+  {
+    name: "My Kit Kat",
+    folder: "chocolate-day"
+  },
+  {
+    name: "mithaas",
+    folder: "chocolate-day0"
   }
   
 ];
