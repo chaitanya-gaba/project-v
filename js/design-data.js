@@ -39,7 +39,7 @@ window.DESIGN_PROJECTS = [
 ];
 
 window.SPOTLIGHT_DESIGN = {
-  name: "मेरी जान",
-  folder: "propose-day",
-  description: "तुम्हारी मुस्कान, तुम्हारी हर अदा, मेरे दिल की सबसे खूबसूरत वजह"
+  name: "My Kit Kat",
+  folder: "chocolate-day",
+  description: "Chocolate share kar sakta hoon… par tum? Never."
 };
