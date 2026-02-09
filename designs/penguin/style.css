@@ -1,0 +1,266 @@
+/* General container setup */
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.pinguin {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  margin-left: -210px;
+  transform: scale(0.7);
+}
+
+.body {
+  position: absolute;
+  background-color: black;
+}
+
+/* Penguin Body */
+.c1 {
+  width: 340px;
+  height: 380px;
+  border-radius: 340px/380px;
+  left: 130px;
+}
+
+.c2 {
+  width: 400px;
+  height: 510px;
+  border-radius: 400px/510px;
+  top: 70px;
+  left: 100px;
+}
+
+/* Eyes */
+.eye {
+  position: absolute;
+  font-size: 0;
+  color: transparent;
+  transition: all 0.4s ease-in-out;
+}
+
+.eye1_1 {  
+  width: 128px;
+  height: 154px;
+  background-color: #e0e0e0;
+  border-radius: 128px/154px;
+  left: 190px;
+  top: 45px;
+}
+
+.eye1_2 {
+  width: 128px;
+  height: 150px;
+  background-color: white;
+  border-radius: 128px/150px;
+  left: 190px;
+  top: 55px;
+}
+
+.eye1_3 {
+  width: 33px;
+  height: 33px;
+  background-color: black;
+  border-radius: 33px;
+  left: 235px;
+  top: 110px;
+  font-size: 28px; /* Initially use a black dot */
+  text-align: center;
+}
+
+.eye2_1 {  
+  width: 128px;
+  height: 154px;
+  background-color: #e0e0e0;
+  border-radius: 128px/154px;
+  left: 285px;
+  top: 45px;
+}
+
+.eye2_2 {
+  width: 128px;
+  height: 150px;
+  background-color: white;
+  border-radius: 128px/150px;
+  left: 285px;
+  top: 55px;
+}
+
+.eye2_3 {
+  width: 33px;
+  height: 33px;
+  background-color: black;
+  border-radius: 33px;
+  left: 335px;
+  top: 110px;
+  font-size: 28px; /* Initially use a black dot */
+  text-align: center;
+}
+
+/* Beak */
+.beak1 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 50px solid #fdd835; 
+  border-left: 50px solid transparent;
+  transform: rotate(-135deg);
+  top: 175px;
+  left: 276px;
+}
+
+.beak2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 50px solid #fbc02d; 
+  border-left: 50px solid transparent;
+  transform: rotate(45deg);
+  top: 175px;
+  left: 275px;
+}
+
+/* Abdomen */
+.abdomen1 {
+  position: absolute;
+  width: 312px;
+  height: 287px;
+  background-color: #e0e0e0;
+  border-radius: 312px / 287px;
+  left: 145px;
+  top: 253px;
+}
+
+.abdomen2 {
+  position: absolute;
+  width: 301px;
+  height: 287px;
+  background-color: white;
+  border-radius: 301px / 287px;
+  left: 150px;
+  top: 245px;
+}
+
+/* Legs */
+.leg {
+  position: absolute;
+}
+
+.leg1_1 {
+  width: 143px;
+  height: 70px;
+  background-color: #fbc02d;
+  border-radius: 143px / 70px;
+  left: 145px;
+  top: 535px;
+}
+
+.leg2_1 {
+  width: 143px;
+  height: 70px;
+  background-color: #fbc02d;
+  border-radius: 143px / 70px;
+  left: 313px;
+  top: 535px;
+}
+
+.leg1_2 {
+  width: 115px;
+  height: 34px;
+  background-color: #fdd835;
+  border-radius: 115px / 34px;
+  left: 160px;
+  top: 545px;
+}
+
+.leg2_2 {
+  width: 115px;
+  height: 34px;
+  background-color: #fdd835;
+  border-radius: 115px / 34px;
+  left: 328px;
+  top: 545px;
+}
+
+.leg3 {
+  width: 350px;
+  height: 34px;
+  background-color: #555;
+  left: 120px;
+  top: 590px;
+}
+
+/* Wings */
+.wing1 {
+  width: 72px;
+  height: 275px;
+  border-radius: 72px/275px;
+  left: 460px;
+  top: 187px;
+  transform: rotate(-15deg);
+}
+
+.wing2 {
+  width: 72px;
+  height: 275px;
+  border-radius: 72px/275px;
+  left: 65px;
+  top: 187px;
+  transform: rotate(15deg);
+}
+
+/* Hover/Click effects */
+.pin:hover .wing1{
+  transform-origin: 0px 120px;
+  transform: rotate(-40deg);
+}
+
+.pin:hover .wing2{
+  transform-origin: 70px 120px;
+  transform: rotate(40deg);
+}
+
+.pin:hover .eye1_3, .pin:hover .eye2_3 {
+  transition: all 0.4s ease-in-out;
+  color: red; /* Make emoji hearts appear */
+  font-size: 28px;
+  content: "❤️"; /* Make the eyes into hearts */
+}
+
+/* Hover Effect for Changing Background */
+body {
+  background-color: #555;
+  transition: background-color 0.3s;
+}
+
+/* When penguin is hovered, background becomes love yellow */
+body.love-yellow {
+  background-color: rgba(250, 204, 21, 0.7); /* Love Yellow */
+}
+
+/* Text that appears below penguin on hover */
+/* Text that appears below penguin on hover */
+/* Hover Text below penguin's leg3 */
+.hover-text {
+  position: absolute;
+  top: calc(480px + 34px + 5%); /* leg3 top + leg3 height + 5% gap */
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: calc(100% - 6rem); /* 5rem margin each side */
+  text-align: center;
+  font-family: Georgia, serif;
+  color: #b86f98;
+  font-size: 1.5rem; /* adjust as needed */
+  visibility: hidden;
+  opacity: 0;
+  line-height: 1.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Show hover text on penguin hover */
+.pinguin:hover + .hover-text {
+  visibility: visible;
+  opacity: 1;
+}

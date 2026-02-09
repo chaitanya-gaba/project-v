@@ -38,7 +38,15 @@ window.DESIGN_PROJECTS = [
   {
     name: "my panda 🫶🐼",
     folder: "panda-css"
-  }
+  },
+  {
+    name: "my cute little panda",
+    folder: "panda"
+  },
+  // {
+  //   name: "XOXO🤗",
+  //   folder: "penguin"
+  // }
 ];
 
 window.SPOTLIGHT_DESIGN = {

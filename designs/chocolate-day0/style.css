@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F47321;
+  background: #f462cf;
   transform-style: preserve-3d;
   perspective: 1000px;
 }

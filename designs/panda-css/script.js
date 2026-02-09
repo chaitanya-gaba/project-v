@@ -6,9 +6,9 @@
     const messages = [
       "You're paw-some!",
       "Panda hugs for you!",
-      "Stay pawsitive, friend!",
+      "Stay pawsitive, Sumukhi!",
       "Life is better with pandas!",
-      "I'm just here to spread smiles!"
+      "I'm just here to see your smiles!"
     ];
 
     // Function to show random message when panda is clicked
