@@ -51,8 +51,8 @@ window.THEME_EMOTIONS = {
   },
 
   "teddy-day": {
-    thought: "Love can be playful and soft. 💛",
-    message: "Today is about warmth, innocence, and safe embraces."
+    thought: "Teddy ko dekh ke lagta hai… kabhi kabhi zindagi thoda soft aur cuddle-worthy hona chahiye. 🧸",
+    message: "Teddy ka kaam sirf apne paas rakhna hai, par tumhara kaam hai… har din ko mere liye thoda aur special bana dena. Tum jaise ho, waise toh har din ek teddy ho jata hai — pyar se bhara, aur thoda naughty bhi. Tumhare bina, yeh teddy bhi udaas reh jaata hai!"
   },
 
   "promise-day": {

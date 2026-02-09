@@ -34,12 +34,15 @@ window.DESIGN_PROJECTS = [
   {
     name: "mithaas",
     folder: "chocolate-day0"
+  },
+  {
+    name: "my panda 🫶🐼",
+    folder: "panda-css"
   }
-  
 ];
 
 window.SPOTLIGHT_DESIGN = {
-  name: "My Kit Kat",
-  folder: "chocolate-day",
-  description: "Chocolate share kar sakta hoon… par tum? Never."
+  name: "My Cute Little Panda 🐼",
+  folder: "panda-css",
+  description: "Tumhari muskurahat aise hai, jaise dhoop me garmi ki baad, ek chhota sa thanda sa pal."
 };
