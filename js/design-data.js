@@ -8,16 +8,20 @@ window.DESIGN_PROJECTS = [
     folder: "yes-no"
   },
   {
-    name: "Love Letter UI",
-    folder: "letter-L"
-  },
-  {
-    name: "Pink Landing Page",
+    name: "Longgggg.....Distance",
     folder: "LD"
   },
   {
-    name: "Memory Card Design",
+    name: "I Missss You",
+    folder: "letter-L"
+  },
+  {
+    name: "Maafi",
     folder: "1stday"
+  },
+  {
+    name: "dil ki baat",
+    folder: "busy"
   },
   {
     name: "मेरे गुलाब",
@@ -46,11 +50,87 @@ window.DESIGN_PROJECTS = [
   // {
   //   name: "XOXO🤗",
   //   folder: "penguin"
-  // }
+  // },
+  {
+    name: "Hugggsssss.....",
+    folder: "huggy-bear"
+  },
+  // {
+  //   name: "Ek or Jappi",
+  //   folder: "animated-bear"
+  // },
+  // {
+  //   name: "valentine's",
+  //   folder: "heart-v"
+  // },
+  // {
+  //   name: "15th-Feb",
+  //   folder: "bulleya"
+  // },
+  // {
+  //   name: "for v-day party",
+  //   folder: "champaign"
+  // },
+  // {
+  //   name: "Ati Uttam",
+  //   folder: "excited"
+  // },
+  // {
+  //   name : "Valetine's wish",
+  //   folder: "final-v"
+  // },
+  {
+    name: "More Power to You",
+    folder: "getwell-soon"
+  },
+  {
+    name: "Love-Post",
+    folder: "indian-post"
+  },
+  {
+    name: "Journal Feelings",
+    folder: "Journal"
+  },
+  {
+    name: "Dhappa",
+    folder: "miss"
+  },
+  {
+    name: "Tera Ehsaas",
+    folder: "missing"
+  },
+  {
+    name: "panna",
+    folder: "parchment-paper"
+  },
+  {
+    name: "I am Sorry",
+    folder: "sorry"
+  },
+  {
+    name: "Dil ka Jo Haal Hai",
+    folder: "typewriter"
+  },
+  {
+    name: "buckle-up my champ",
+    folder: "cheer-up"
+  },
+  {
+    name: "preeya diary",
+    folder: "diary"
+  },
+  {
+    name: "Lover's Letter",
+    folder: "envelop"
+  },
+  {
+    name: "zaalima",
+    folder: "3d-object"
+  }
 ];
 
 window.SPOTLIGHT_DESIGN = {
-  name: "My Cute Little Panda 🐼",
-  folder: "panda-css",
-  description: "Tumhari muskurahat aise hai, jaise dhoop me garmi ki baad, ek chhota sa thanda sa pal."
+  name: "HUgggsssss....🤗",
+  folder: "huggy-bear",
+  description: "Main hoon na… tumhare har din ko thoda aur special banane ke liye, aur har raat ko bas tumhare sapno mein aa jaane ke liye."
 };

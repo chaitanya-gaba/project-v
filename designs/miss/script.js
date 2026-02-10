@@ -1,13 +1,13 @@
 // Countdown Timer
     const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date("February 21, 2026 14:00:00").getTime();
+    const targetDate = new Date("February 15, 2026 12:00:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
         if(distance < 0){
-            countdownElement.innerHTML = "I'm back with you! ❤️";
+            countdownElement.innerHTML = "Darwaaza Khol Meri Jaan, I'm back with you! ❤️";
             clearInterval(timerInterval);
             return;
         }

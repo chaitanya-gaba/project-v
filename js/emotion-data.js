@@ -56,8 +56,8 @@ window.THEME_EMOTIONS = {
   },
 
   "promise-day": {
-    thought: "Promises are love made visible. 💙",
-    message: "Trust grows where words are honored and hearts stay steady."
+    thought: "Waada karna… sirf shabd nahi, dil ki guarantee hoti hai. 💖",
+    message: "Main waada karta hoon… har baar tumhari muskaan dekh kar main tumhe aur zyada chahunga, har baar tumhe tease karke tumhe sharminda karunga, aur bas… hamesha tumhare saath rahunga. Promise? Tum meri life ki heroine ho, aur main tumhara hero — bas yehi script hai, jo hum dono ne likhi hai."
   },
 
   "hug-day": {

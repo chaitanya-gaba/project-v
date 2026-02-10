@@ -1,0 +1,19 @@
+.emo {
+  display: block;
+  text-indent: -9999px; /* hide text visually */
+  overflow: hidden;     /* prevent text from showing */
+  white-space: nowrap;  /* prevent wrapping */
+}
+
+.demo {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 106, 221);
+}
+
+.label {
+  background-color: rgb(247, 106, 221);
+}

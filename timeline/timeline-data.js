@@ -25,9 +25,9 @@ window.TIMELINE_DATA = [
     emoji: "📍"
   },
   {
-    date: "12 Mar 2026",
-    text: "Kuch nahin hua.",
-    emoji: "📍"
+    date: "10 Feb 2026",
+    text: "Tera Rubber Band",
+    emoji: "🧿"
   },
   {
     date: "17 Mar 2026",
