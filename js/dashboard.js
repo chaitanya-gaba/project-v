@@ -228,15 +228,18 @@ function getTodayKey(prefix) {
   openBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     modal.classList.add("open");
+    document.body.classList.add("modal-open");
   });
 
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("open");
+    document.body.classList.remove("modal-open");
   });
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.classList.remove("open");
+      document.body.classList.remove("modal-open");
     }
   });
 })();

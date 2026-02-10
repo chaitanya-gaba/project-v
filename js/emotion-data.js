@@ -46,7 +46,7 @@ window.THEME_EMOTIONS = {
   },
 
   "chocolate-day": {
-    thought: "Zindagi thodi si meethi honi chahiye… bilkul tumhari yaadon ki tarah 🍫",
+    thought: "Chocolate share kar sakta hoon, par tumhe...Never",
     message: "Chocolate ki tarah tum bhi dheere dheere ghul jaati ho meri zindagi mein — aur phir har din ko thoda sa aur khoobsurat bana deti ho. Tum saath ho toh kadvi si baatein bhi meethi lagne lagti hain."
   },
 
