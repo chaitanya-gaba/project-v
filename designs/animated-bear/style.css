@@ -1,8 +1,70 @@
+html, body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8c8dc; /* soft teddy-pink */
+}
+
+.bear-section {
+  display: flex;
+  flex-direction: column; /* stack bear and label vertically */
+  align-items: center;    /* center horizontally */
+  justify-content: center;
+}
+
+.label {
+  position: absolute;
+  z-index: 10;
+  top: 70%;          /* 30% below center */
+  left: 50%;         /* horizontally centered */
+  transform: translateX(-50%);
+  background-color: #f28eb9; /* static pink background */
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.label .text {
+  display: inline-block;
+  color: white;
+  font-size: 2rem;
+  animation: heartbeat 1s infinite ease-in-out;
+}
+
+.label .cursor {
+  display: inline-block;
+  font-size: 2rem;
+  color: white;
+  margin-left: 2px;
+  animation: blink 0.7s step-start infinite;
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Heartbeat for text only */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
 .emo {
   display: block;
   text-indent: -9999px; /* hide text visually */
   overflow: hidden;     /* prevent text from showing */
   white-space: nowrap;  /* prevent wrapping */
+  transform: scale(3);  /* teddy size */
 }
 
 .demo {
@@ -11,9 +73,4 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: rgb(247, 106, 221);
-}
-
-.label {
-  background-color: rgb(247, 106, 221);
 }

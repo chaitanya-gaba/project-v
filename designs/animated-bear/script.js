@@ -70,3 +70,18 @@ var emo = (function() {
 })();
 
 emo(document.querySelector('.emo'));
+
+const textElement = document.querySelector('.label .text');
+const message = "Give him a hug ❤";
+let index = 0;
+
+function typeWriter() {
+  if (index < message.length) {
+    textElement.textContent += message.charAt(index);
+    index++;
+    setTimeout(typeWriter, 150); // adjust speed here
+  }
+}
+
+// Start the typewriter effect
+typeWriter();
