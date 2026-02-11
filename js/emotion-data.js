@@ -61,17 +61,17 @@ window.THEME_EMOTIONS = {
   },
 
   "hug-day": {
-    thought: "Some feelings don’t need words. 🧡",
-    message: "A hug can say what sentences never could."
+    thought: "Kabhi kabhi… sirf ek hug hi sab kuch keh deta hai. 🤗Tumhara Chinu hamesha tumhar eliye baahein khol ke khada hai meri Shanti..",
+    message: "Agar main tumhe abhi hug karu, toh shayad duniya ke saare dard chhup jaaye… aur bas tum aur main, ek doosre mein ghul jaayein. Chalo, ek hug ho jaaye — bas tumhare dil ke paas, mere dil ke paas. 💖"
   },
 
   "kiss-day": {
-    thought: "Intimacy lives in closeness. 💜",
-    message: "A quiet moment, shared breath, and unspoken connection."
+    thought: "Intimacy lives in closeness. Kabhi kabhi… ek chhoti si kiss hi dil ki saari baatein keh deti hai. 💋💜",
+    message: "Agar main tumhe abhi kiss karu, toh shayad waqt bhi ruk jaaye… aur bas tum aur main, ek pal ke liye duniya se alag. Tumhare honthon mein jo jaadu hai, bas ek chhoti si chumban aur har ehsaas nayi duniya bana dega."
   },
 
   "valentine-day": {
-    thought: "Love is both passion and peace. ❤️🤍",
-    message: "Today celebrates devotion — bold, sincere, and lasting."
+    thought: "Pyaar… sirf ehsaas nahi, ek junoon hai. ❤️🤍❤️",
+    message: "Aaj ke din, main sirf ye waada karta hoon — tumhari har muskaan, har khushi, aur har pal ka hissa banna. Tum meri duniya ho, aur main tumhara, bas isi प्रेम mein do dil milte hain."
   }
 };

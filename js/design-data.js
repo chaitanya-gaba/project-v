@@ -47,18 +47,18 @@ window.DESIGN_PROJECTS = [
     name: "my cute little panda",
     folder: "panda"
   },
-  // {
-  //   name: "XOXO🤗",
-  //   folder: "penguin"
-  // },
+  {
+    name: "Huggy Wuggy🤗",
+    folder: "penguin"
+  },
   {
     name: "Hugggsssss.....",
     folder: "huggy-bear"
   },
-  // {
-  //   name: "Ek or Jappi",
-  //   folder: "animated-bear"
-  // },
+  {
+    name: "Ek or Jappi",
+    folder: "animated-bear"
+  },
   // {
   //   name: "valentine's",
   //   folder: "heart-v"
@@ -130,7 +130,7 @@ window.DESIGN_PROJECTS = [
 ];
 
 window.SPOTLIGHT_DESIGN = {
-  name: "HUgggsssss....🤗",
-  folder: "huggy-bear",
-  description: "Main hoon na… tumhare har din ko thoda aur special banane ke liye, aur har raat ko bas tumhare sapno mein aa jaane ke liye."
+  name: "Huggy Wuggy🤗",
+  folder: "penguin",
+  description: "Zindagi ka har pal… thoda pyaara ho jaata hai, jab koi chhota sa hug bas paas ho. 🐧💛"
 };
