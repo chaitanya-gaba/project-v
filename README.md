@@ -1,7 +1,7 @@
 # 💌 Project V
 ## A Living Valentine Experience
 <p align="center"> Dynamic • Emotion-Driven • Modular • Date-Aware </p>
-## 🌹 Overview
+##🌹 Overview
 
 **Project V** is a modular Valentine-themed dashboard that evolves with time.
 
