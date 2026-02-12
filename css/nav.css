@@ -1,0 +1,92 @@
+/* =========================
+   NAV BAR
+========================= */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--heading-color);
+
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+
+  transition: background 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 182, 193, 0.25);
+}
+
+.user-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 120%;
+
+  background: var(--card-bg);
+  width: 10rem;
+  padding: 0.9rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+
+  opacity: 0;
+  backdrop-filter: blur(80px);
+  pointer-events: none;
+  transform: translateY(6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.user-dropdown.open .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.themes-panel button {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--soft-text);
+  text-align: left;
+}

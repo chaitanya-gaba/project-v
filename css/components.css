@@ -1,0 +1,26 @@
+/* =========================
+   CARDS
+========================= */
+.card {
+  width: 100%;
+  height: 100%;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2.2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   CSS SKETCH PLACEHOLDER
+========================= */
+.css-sketch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soft-text);
+  font-style: italic;
+}
+
+.css-sketch::after {
+  content: "A soft sketch will live here ✿";
+}

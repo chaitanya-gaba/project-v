@@ -1,0 +1,130 @@
+/* =========================
+   MODAL
+========================= */
+.modal {
+  background: var(--card-bg);
+  border-radius: 18px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden; /* clips rounded corners */
+}
+
+.modal-inner {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 2.2rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,182,193,0.35);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-design-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+
+.modal-design-list a {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  background: #fff0f5;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+/* =========================
+   MODAL CLOSE BUTTON (THEME-AWARE)
+========================= */
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: none;
+
+  background: var(--accent-soft);
+  color: var(--heading-color);
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+  backdrop-filter: blur(6px);
+}
+
+.close-modal:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   MODAL SCROLL LOCK
+========================= */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Timeline - Node */
+
+.timeline-node .content {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+}
+
+.timeline-node .date {
+  background: var(--accent-soft);  /* use accent color instead of card-bg */
+  color: var(--heading-color);      /* readable text on accent */
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;              /* keep date in single line */
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+}
+
+.timeline-node .text {
+  background: var(--accent-soft); /* theme accent color */
+  color: var(--heading-color);     /* theme heading color for contrast */
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;  
+  max-width: 300px;               /* auto-expands but limits width */
+  min-width: 50px;
+  white-space: nowrap;
+}

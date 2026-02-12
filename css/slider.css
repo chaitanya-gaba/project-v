@@ -1,0 +1,48 @@
+/* =========================
+   ROW 3 SLIDER
+========================= */
+.slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+.slider-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.slider-card.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  pointer-events: none;
+}
+
+.slider-controls button {
+  pointer-events: auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-soft);
+  color: #fff;
+  cursor: pointer;
+}

@@ -1,0 +1,34 @@
+/* =========================
+   CONTAINER
+========================= */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* =========================
+   ROWS & COLUMNS
+========================= */
+.row {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: stretch;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.dashboard-footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-style: italic;
+  color: var(--soft-text);
+}

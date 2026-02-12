@@ -1,0 +1,39 @@
+/* =========================
+   SPOTLIGHT HOVER POLISH
+========================= */
+.spotlight {
+  cursor: pointer;
+  position: relative;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.spotlight:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(255, 105, 180, 0.25);
+}
+
+/* =========================
+   FEATURED BADGE
+========================= */
+.spotlight::before {
+  content: "Featured";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+
+  color: var(--text-color);
+  background: linear-gradient(
+    135deg,
+    var(--bg-color),
+    #ffb3c6
+  );
+
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.35);
+}

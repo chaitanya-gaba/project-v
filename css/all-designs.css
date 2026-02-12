@@ -1,0 +1,56 @@
+/* =========================
+   ROW 2 EMPHASIS
+========================= */
+#designs .card {
+  padding: 2.4rem;
+}
+
+.all-designs .design-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.all-designs .design-links a {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  background: #fff0f5;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+/* =========================
+   ALL DESIGNS – HOVER ELEVATION
+========================= */
+.open-designs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  cursor: pointer;
+  user-select: none;
+
+  font-weight: 500;
+  color: var(--heading-color);
+
+  transition:
+    transform 0.25s ease,
+    text-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.open-designs-btn::after {
+  content: "➤";
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.open-designs-btn:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 6px 18px var(--accent-soft);
+}
+
+.open-designs-btn:hover::after {
+  transform: translateX(4px);
+}
