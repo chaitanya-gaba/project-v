@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="gradient-bg"></div>
+  <canvas id="bgParticles"></canvas>
+  <canvas id="fgParticles"></canvas>
+  <div class="grain"></div>
+
+  <main class="page">
+    <div class="content">
+      <p class="line line-1">Some feelings don’t arrive loudly.</p>
+      <p class="line line-2">They drift in softly…</p>
+      <p class="line line-3 highlight">And suddenly, they feel like home.</p>
+    </div>
+  </main>
+
+  <div class="cursor-glow"></div>
+
+    <div id="time-travel-overlay" class="hidden">
+        <canvas id="warpCanvas"></canvas>
+        <div class="countdown">
+            <span id="count">7</span>
+        </div>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

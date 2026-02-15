@@ -59,26 +59,26 @@ window.DESIGN_PROJECTS = [
     name: "Ek or Jappi",
     folder: "animated-bear"
   },
-  // {
-  //   name: "valentine's",
-  //   folder: "heart-v"
-  // },
-  // {
-  //   name: "15th-Feb",
-  //   folder: "bulleya"
-  // },
-  // {
-  //   name: "for v-day party",
-  //   folder: "champaign"
-  // },
-  // {
-  //   name: "Ati Uttam",
-  //   folder: "excited"
-  // },
-  // {
-  //   name : "Valetine's wish",
-  //   folder: "final-v"
-  // },
+  {
+    name: "valentine's",
+    folder: "v-day-card"
+  },
+  {
+    name: "15th-Feb",
+    folder: "final-v"
+  },
+  {
+    name: "for v-day party",
+    folder: "champaign"
+  },
+  {
+    name: "Ati Uttam",
+    folder: "invitation"
+  },
+  {
+    name : "Valetine's wish",
+    folder: "heart-v"
+  },
   {
     name: "More Power to You",
     folder: "getwell-soon"
@@ -130,7 +130,7 @@ window.DESIGN_PROJECTS = [
 ];
 
 window.SPOTLIGHT_DESIGN = {
-  name: "Huggy Wuggy🤗",
-  folder: "penguin",
-  description: "Zindagi ka har pal… thoda pyaara ho jaata hai, jab koi chhota sa hug bas paas ho. 🐧💛"
+  name: "प्रिय ❤️",
+  folder: "finale",
+  description: "Har pal ka rang… thoda pyara ho jaata hai, jab tum pass ho, ek chhoti si hansi ho, aur ek halki si chamak sirf tumhare liye dhadak rahi ho. 🌟💗❤️🤍❤️‍🔥💛"
 };

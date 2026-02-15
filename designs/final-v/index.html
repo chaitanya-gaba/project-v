@@ -3,40 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final - V</title>
+  <title>For K ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 </head>
 <body>
 
-  <div id="card">
-    <center><h1>Valentines Day Card</h1></center>
+<!-- Page 1 -->
+<div id="page1" class="page">
+  <h1 class="glow-text pulse-text">
+    Careful, K… <br>
+    ek baar meri duniya mein aa gayi na… <br>
+    phir wapas jaane ka mann hi nahi karega.
+    
+  </h1><span id="click-heart">❤️</span>
 
-    <div class="heart" id="heart1">
-      <div class="half1">
-        <div class="circle"></div>
-        <div class="rec"></div>
-      </div>
-      <div class="half2">
-        <div class="circle"></div>
-        <div class="rec"></div>
-      </div>
+  <p class="floating-text">Himmat hai, to dill ko dhadkaa..</p>
+</div>
+
+<!-- Page 2 -->
+<div id="page2" class="page">
+  <h2 class="glow-text fade-text">Bollywood & Romance ✨</h2>
+  <p class="cinematic-text focus-in">
+    I don’t chase hearts… <br>
+    I claim them. <br><br>
+    And yours? <br>
+    It was mine the moment you looked at me. 💘
+  </p>
+  <audio id="bg-music" src="assets/audios/Cc.m4a"></audio>
+  <div id="clapperboard">🎬 Start Adventure</div>
+</div>
+
+<!-- Page 3 -->
+<div id="page3" class="page">
+  <h2 class="glow-text fade-text">K-pop Vibes 🎵</h2>
+  <div id="avatar-container">
+    <img id="taehyung-avatar" src="assets/images/Snapchat-1680683243.jpg" alt="Kim Tae-hyung" />
+  </div>
+</div>
+
+<!-- Page 4 -->
+<div id="page4" class="page">
+  <h2 class="glow-text fade-text">Rainy K-drama Magic 🌧</h2>
+  <p class="animated-text cinematic-rain-text">
+    Agar baarish alfaaz hoti na…<br>
+    aaj poora aasman meri taraf se <span class="highlight">“I love you”</span> keh raha hota. ☔
+  </p>
+  <div id="umbrella-container">
+    <div id="umbrella">☂️ Click me!</div>
+  </div>
+  <div id="secret-message" class="secret-message-hidden">
+    Tum mere sapno ki heroine ho ❤️
+  </div>
+</div>
+
+<!-- Page 5 -->
+<div id="page5" class="page">
+  <h2 class="glow-text fade-text">Our Memories 📸</h2>
+  <div id="timeline">
+    <div class="memory">
+      <img src="assets/images/img1.jpg" alt="Memory 1" />
+      <div class="caption">मैं हूं ना</div>
     </div>
-
-    <div id="message">
-      <h2>Happy Valentines Day Sonali</h2>
+    <div class="memory">
+      <img src="assets/images/img2.jpg" alt="Memory 2" />
+      <div class="caption">तू मेरी सुमुखी</div>
     </div>
-
-    <div class="heart" id="heart2">
-      <div class="half1">
-        <div class="circle"></div>
-        <div class="rec"></div>
-      </div>
-      <div class="half2">
-        <div class="circle"></div>
-        <div class="rec"></div>
-      </div>
+    <div class="memory">
+      <img src="assets/images/img3.jpg" alt="Memory 3" />
+      <div class="caption">ॐ शांति ॐ</div>
     </div>
   </div>
+  <div id="memory-message"></div>
+</div>
 
+<!-- Page 6 -->
+<div id="page6" class="page">
+  <h2 class="glow-text fade-text">💖 To K 💖</h2>
+  <p id="love-paragraph">
+    K, zindagi ki har khushi tumse hi hai… aur main chahta hoon, har pal tumhare saath ho. Kya tum meri ho? ❤️
+  </p>
+  <p id="second-message">
+    I knew you would say YES 💍✨
+  </p>
+</div>
+
+<audio id="bg-music" src="romantic.mp3" loop></audio>
+
+<script src="script.js"></script>
 </body>
 </html>

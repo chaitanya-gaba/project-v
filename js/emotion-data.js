@@ -10,7 +10,7 @@ window.DATE_THEME_MAP = {
   "02-11": "promise-day",
   "02-12": "hug-day",
   "02-13": "kiss-day",
-  "02-14": "valentine-day"
+  "02-16": "valentine-day"
 };
 
 /* ===================================================
@@ -70,8 +70,8 @@ window.THEME_EMOTIONS = {
     message: "Agar main tumhe abhi kiss karu, toh shayad waqt bhi ruk jaaye… aur bas tum aur main, ek pal ke liye duniya se alag. Tumhare honthon mein jo jaadu hai, bas ek chhoti si chumban aur har ehsaas nayi duniya bana dega."
   },
 
-  "valentine-day": {
-    thought: "Pyaar… sirf ehsaas nahi, ek junoon hai. ❤️🤍❤️",
-    message: "Aaj ke din, main sirf ye waada karta hoon — tumhari har muskaan, har khushi, aur har pal ka hissa banna. Tum meri duniya ho, aur main tumhara, bas isi प्रेम mein do dil milte hain."
-  }
+  "valentines-day": {
+    thought: "Thoda late, par sirf tumhare liye… kyunki jo dil se aata hai, uska time kabhi purana nahi hota. 💘",
+    message: "Tumhare saath har pal ek movie ka scene lagta hai — slow motion, soft background music, aur bas tum aur main. Tumhara haath mere haath mein ho, aur har ek heartbeat ek dialogue kahe — ‘Main hamesha tumhara rahunga.’ Aur haan, chhoti si baat… jo paani maine abhi piya, woh bhi tumhare naam ka jaadu lekar aaya hai. 😉💖"
+  },
 };

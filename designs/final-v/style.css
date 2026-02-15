@@ -1,114 +1,460 @@
-@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+/* ==============================
+   GLOBAL STYLES
+============================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+  background: #10021e;
+  color: white;
+}
 
 body {
-  background-color: #ddd;
-  font-family: 'Poiret One', Segoe UI Light, cursive;
+  overflow-x: hidden;
 }
 
-#card {
+h2, p {
+  max-width: 90%;
+}
+
+.page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
   position: absolute;
-  top: 100px;
-  width: 460px;
-  height: 260px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.05);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+}
+
+#page4, #page5, #page6 {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#page4 h2,
+#page5 h2,
+#page6 h2 {
+  margin-bottom: 20px;
+}
+
+#timeline {
+  display: flex;
+  flex-direction: row;       /* force horizontal */
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* align vertically */
+  gap: 50px;                 /* space between emojis */
+  margin-top: 40px;
+  flex-wrap: wrap;           /* allows wrapping on small screens */
+}
+
+#click-heart {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              text-shadow 0.6s ease;
+}
+
+#click-heart:hover {
+  transform: scale(1.8);
+  text-shadow:
+    0 0 15px #ff69b4,
+    0 0 30px #ff1493;
+}
+
+/* ==============================
+   GLOW TEXT
+============================== */
+.glow-text {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #ffb6c1,
+    0 0 20px #ff69b4,
+    0 0 40px #ff1493,
+    0 0 80px #ff1493;
+  transition: text-shadow 0.5s ease;
+}
+
+/* ==============================
+   PULSE & FLOATING TEXT
+============================== */
+.pulse-text {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 10px #ff69b4; }
+  50% { transform: scale(1.1); text-shadow: 0 0 20px #ff1493; }
+}
+
+.floating-text {
+  font-size: 1.2em;
+  margin-top: 20px;
+  animation: floatText 2s infinite alternate;
+}
+
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+
+/* ==============================*/
+.cinematic-text {
+  font-size: 2.3em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  color: #ffe6f7;
+  text-align: center;
+
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(1.05);
+  transition: all 1.8s ease;
+}
+
+.cinematic-text.reveal {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  text-shadow:
+    0 0 12px rgba(255,105,180,0.6),
+    0 0 30px rgba(255,20,147,0.4);
+}
+
+.focus-in {
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(1.05);
+  animation: focusReveal 4s ease forwards;
+}
+
+.animated-text.delay1 { animation-delay: 0.5s; }
+
+.fade-text {
+  opacity: 0;
+  animation: fadeInText 1s forwards;
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure text is visible */
+#poster-quote {
+  position: absolute; /* Make sure the text is placed correctly */
+  bottom: 20px;       /* Adjust this value to fine-tune positioning */
   left: 50%;
-  margin-left: -230px;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white; /* Choose an appropriate color based on background */
+  text-align: center;
+  z-index: 10; /* Ensure it stays on top */
+  opacity: 1;
+  display: none; /* Initially hidden */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.heart {
-  width: 260px;
-  height: 260px;
-  float: left;
+/* If the text is shown, we can use GSAP animation */
+#poster-quote.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
-.circle {
-  height: 130px;
-  width: 130px;
-  border-radius: 50%;
-  background-color: #D32F2F;
+/* ==============================
+   PAGE 2 & 4 BUTTONS
+============================== */
+#clapperboard, #umbrella {
+  cursor: pointer;
+  font-size: 3em;
+  margin-top: 30px;
+  transition: transform 0.3s, text-shadow 0.3s;
 }
 
-.rec {
-  margin-top: -60px;
-  width: 130px;
-  height: 130px;
-  background-color: #D32F2F;
-  border-radius: 35% 0 0 0;
+#clapperboard:hover, #umbrella:hover {
+  transform: scale(1.3) rotate(-10deg);
+  text-shadow: 0 0 30px #fff;
 }
 
-.half2 {
-  transform: rotate(-90deg);
-  margin-top: -330px;
-  margin-left: -200px;
+/* ==============================
+   PAGE 3 - AVATAR
+============================== */
+#avatar-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* vertically center */
 }
 
-#heart2 {
-  margin-top: -60px;
-  margin-left: -130px;
-}
-
-#heart2 .circle,
-#heart2 .rec {
-  background-color: #fff;
-}
-
-#heart2 .half2 .rec {
-  border-bottom: 1px solid #eee;
-  margin-top: -61px;
-}
-
-#message {
-  float: left;
+#taehyung-avatar {
   width: 200px;
-  height: 200px;
-  margin-left: -130px;
-  background-color: #333;
-  border-radius: 35% 0 35% 0;
+  cursor: pointer;
+  transition: transform 0.5s, box-shadow 0.5s;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ff69b4;
+}
+
+#taehyung-avatar.dance {
+  animation: danceMove 2s ease-in-out infinite;
+}
+
+@keyframes danceMove {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(-15deg); }
+  50% { transform: translateY(0) rotate(15deg); }
+  75% { transform: translateY(-20px) rotate(-15deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* PAGE 3 - AVATAR SWIRL TRANSITION */
+@keyframes swirlTransition {
+  0% {
+    transform: rotate(0deg) scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(360deg) scale(1.5) translate(50px, -50px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(720deg) scale(0) translate(0, -200px);
+    opacity: 0;
+  }
+}
+
+#taehyung-avatar.swirl {
+  animation: swirlTransition 1s forwards ease-in-out;
+  box-shadow: 0 0 30px #ff69b4, 0 0 60px #ff1493;
+}
+
+/* Page 4 */
+/* ---------------------------
+   Cinematic rain paragraph
+---------------------------- */
+.cinematic-rain-text {
+  font-size: 2em;
+  line-height: 1.5;
+  color: #ffe6f7;
   text-align: center;
 }
 
-#message h2 {
-  font-size: 20px;
-  color: #fff;
-  width: 160px;
-  margin-top: 60px;
-  margin-left: 16px;
+.cinematic-rain-text.reveal {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  transition: all 3s ease; /* slow fade-in & focus */
+  text-shadow:
+    0 0 12px rgba(255,105,180,0.6),
+    0 0 30px rgba(255,20,147,0.4);
 }
 
-#heart1 {
-  transform: rotate(180deg);
-  animation: closeLeft 2s ease-in-out forwards;
+.cinematic-rain-text .highlight {
+  color: #ff4d94;
+  text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
+  font-weight: bold;
+  animation: pulseHighlight 2s infinite alternate;
 }
 
-#heart2 {
-  animation: closeRight 2s ease-in-out forwards;
+@keyframes pulseHighlight {
+  0% { text-shadow: 0 0 10px #ff69b4; transform: scale(1); }
+  50% { text-shadow: 0 0 25px #ff1493; transform: scale(1.05); }
+  100% { text-shadow: 0 0 10px #ff69b4; transform: scale(1); }
 }
 
-#card:hover #heart1 {
-  animation: openLeft 2s ease-in-out forwards;
+/* ---------------------------
+   Secret message
+---------------------------- */
+.secret-message-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.2s ease;
+  font-size: 1.8em;
+  color: #ffd6e8;
+  text-shadow: 0 0 15px #ff69b4, 0 0 25px #ff1493;
+  text-align: center;
+  pointer-events: none;
 }
 
-#card:hover #heart2 {
-  animation: openRight 2s ease-in-out forwards;
+.secret-message-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+  font-size: 1.8em;
+  color: #ffd6e8;
+  text-shadow: 0 0 15px #ff69b4, 0 0 25px #ff1493;
+  text-align: center;
 }
 
-/* Animations */
-
-@keyframes closeLeft {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(180deg); }
+/* ==============================
+   PAGE 5 - MEMORIES TIMELINE
+============================== */
+#timeline {
+  display: flex;
+  flex-direction: row;       /* force horizontal layout */
+  justify-content: center;   /* horizontally center items */
+  align-items: center;       /* vertically center items */
+  gap: 50px;                 /* spacing between emojis */
+  margin-top: 40px;
+  flex-wrap: wrap;           /* allow wrapping on small screens */
 }
 
-@keyframes openLeft {
-  from { transform: rotateY(180deg); }
-  to { transform: rotateY(0deg); }
+.memory {
+  font-size: 3em;
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-@keyframes openRight {
-  0% { transform: rotateX(180deg); }
-  100% { transform: rotateX(0deg) rotateZ(180deg); }
+.memory:hover {
+  transform: scale(1.4) rotate(-10deg);
+  text-shadow: 0 0 20px #ff69b4;
 }
 
-@keyframes closeRight {
-  from { transform: rotateX(0deg) rotate(180deg); }
-  to { transform: rotateX(180deg); }
+#memory-message {
+  margin-top: 20px;
+  font-size: 1.8em;
+  display: none;      /* initially hidden */
+  color: #ffd6e8;
+  text-shadow: 0 0 20px #ff69b4;
+  text-align: center;
+  opacity: 0;         /* fade in using JS */
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.memory img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #ff69b4;
+}
+
+.memory .caption {
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #ffd6e8;
+}
+
+/* ==============================
+   PAGE 6 - LOVE PARAGRAPH
+============================== */
+#love-paragraph {
+  font-size: 1.8em;
+  max-width: 600px;
+  text-align: center;
+  transition: transform 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+}
+
+/* Background canvases (cosmic, rain, fireworks) */
+canvas.background-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;           /* behind everything */
+  pointer-events: none;  /* clicks pass through */
+}
+
+/* Make page containers’ content appear above canvas */
+.page > *:not(canvas) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Avatar & Umbrella centered */
+#avatar-container,
+#umbrella-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+#page6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+#page6 h2,
+#page6 p {
+  position: relative;
+  z-index: 2;
+}
+
+#page6 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Hide initially */
+#page6 h2,
+#page6 #love-paragraph {
+  opacity: 0;
+  position: absolute;
+  transition: all 1.2s ease;
+}
+
+/* Bottom-right placement */
+#page6.revealed #love-paragraph {
+  bottom: 8%;
+  right: 6%;
+  max-width: 300px;
+  text-align: right;
+  opacity: 1;
+}
+
+/* Top-left second message */
+/* Top-left second message */
+#second-message {
+  position: absolute;
+  top: 10%;
+  left: 7%;
+  max-width: 320px;
+
+  font-size: 1.6em;
+  line-height: 1.4;
+  text-align: left;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+
+  /* Soft glow for cinematic feel */
+  text-shadow:
+    0 0 8px rgba(255, 182, 193, 0.8),
+    0 0 15px rgba(255, 105, 180, 0.6);
 }
