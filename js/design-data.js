@@ -68,6 +68,10 @@ window.DESIGN_PROJECTS = [
     folder: "final-v"
   },
   {
+    name: "cosmic",
+    folder: "finale"
+  },
+  {
     name: "for v-day party",
     folder: "champaign"
   },

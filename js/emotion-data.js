@@ -10,7 +10,7 @@ window.DATE_THEME_MAP = {
   "02-11": "promise-day",
   "02-12": "hug-day",
   "02-13": "kiss-day",
-  "02-16": "valentine-day"
+  "02-16": "valentines-day"
 };
 
 /* ===================================================
